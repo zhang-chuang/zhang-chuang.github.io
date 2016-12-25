@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/12/25/hello-world/</loc>
+    <lastmod>2016-12-25T14:24:02.948Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-12-25T14:24:02.945Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/12/24/test-article/</loc>
     <lastmod>2016-12-25T13:42:27.685Z</lastmod>
     <data>
@@ -24,20 +39,5 @@
 
     
     
-    
-  <url>
-    <loc>http://yoursite.com/2016/12/24/hello-world/</loc>
-    <lastmod>2016-12-24T14:11:48.408Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2016-12-24T14:11:48.404Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
 </urlset>
