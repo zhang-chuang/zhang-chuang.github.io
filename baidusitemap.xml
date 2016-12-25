@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2016/12/24/test-article/</loc>
+    <lastmod>2016-12-25T07:43:05.793Z</lastmod>
+    <data>
+        <display>
+        <title>test article</title>
+        <pubTime>2016-12-24T13:51:30.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="HTML" url="http://yoursite.com/categories/HTML/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2016/12/24/hello-world/</loc>
+    <lastmod>2016-12-24T14:11:48.408Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-12-24T14:11:48.404Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>
