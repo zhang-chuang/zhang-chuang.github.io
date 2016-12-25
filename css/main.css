@@ -1373,6 +1373,9 @@ pre .javascript .function {
 .posts-expand .post-title-link .fa {
   font-size: 16px;
 }
+.ds-powered-by {
+  display: none;
+}
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
@@ -1684,7 +1687,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d2ffa7;
+  background: #06adaa;
 }
 .links-of-blogroll {
   font-size: 13px;
