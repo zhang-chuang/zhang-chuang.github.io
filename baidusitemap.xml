@@ -40,25 +40,5 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/2016/12/24/test-article/</loc>
-    <lastmod>2016-12-25T13:42:27.685Z</lastmod>
-    <data>
-        <display>
-        <title>test article</title>
-        <pubTime>2016-12-24T13:51:30.000Z</pubTime>
-        
-        <tag>HTML</tag>
-         
-         
-           
-             
-              <breadCrumb title="HTML" url="http://yoursite.com/categories/HTML/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
 </urlset>
