@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-19T10:35:52.884Z</updated>
+  <updated>2017-05-19T10:48:25.764Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用phpExcel读取上传的excel时，单元格内如果包含2015/05/05格式的时间读取的结果并不是想象 2015/05/05 而是变成了 45646</title>
+    <link href="http://yoursite.com/2016/12/27/php%EF%BC%9AphpExcel%E8%AF%BB%E5%8F%96%E6%97%B6%E9%97%B4%E4%B8%8D%E6%AD%A3%E7%A1%AE%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2016/12/27/php：phpExcel读取时间不正确问题/</id>
+    <published>2016-12-27T12:11:30.000Z</published>
+    <updated>2017-05-19T10:48:25.764Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x7528;phpExcel&#x8BFB;&#x53D6;&#x4E0A;&#x4F20;&#x7684;excel&#x65F6;&#xFF0C;&#x5355;&#x5143;&#x683C;&#x5185;&#x5982;&#x679C;&#x5305;&#x542B;2015/05/05&#x683C;&#x5F0F;&#x7684;&#x65F6;&#x95F4;&#x8BFB;&#x53D6;&#x7684;&#x7ED3;&#x679C;&#x5E76;&#x4E0D;&#x662F;&#x60F3;&#x8C61; 2015/05/05 &#x800C;&#x662F;&#x53D8;&#x6210;&#x4E86; 45646&#x8FD9;&#x79CD;</p>
+<a id="more"></a>
+<h2 id="1&#xFF1A;excelTime&#x65B9;&#x6CD5;"><a href="#1&#xFF1A;excelTime&#x65B9;&#x6CD5;" class="headerlink" title="1&#xFF1A;excelTime&#x65B9;&#x6CD5;"></a>1&#xFF1A;excelTime&#x65B9;&#x6CD5;</h2><pre><code>/**
+ * &#x7528;&#x4E8E;&#x5904;&#x7406;excel&#x4E2D; 2015/05/05&#x8BFB;&#x53D6;&#x4E0D;&#x6B63;&#x786E;
+ * @param $date excel&#x4E2D;&#x65F6;&#x95F4;
+ * @param bool $time &#x662F;&#x5426;&#x5E26;&#x65F6;&#x5206;&#x79D2;(&#x9ED8;&#x8BA4;false)
+ * @return array|int|string 2015-05-05
+ */
+public function excelTime($date, $time = false) {
+    if(function_exists(&apos;GregorianToJD&apos;)){
+        if (is_numeric( $date )) {
+            $jd = GregorianToJD( 1, 1, 1970 );
+            $gregorian = JDToGregorian( $jd + intval ( $date ) - 25569 );
+            $date = explode( &apos;/&apos;, $gregorian );
+            $date_str = str_pad( $date [2], 4, &apos;0&apos;, STR_PAD_LEFT )
+                .&quot;-&quot;. str_pad( $date [0], 2, &apos;0&apos;, STR_PAD_LEFT )
+                .&quot;-&quot;. str_pad( $date [1], 2, &apos;0&apos;, STR_PAD_LEFT )
+                . ($time ? &quot; 00:00:00&quot; : &apos;&apos;);
+            return $date_str;
+        }
+    }else{
+        $date=$date&gt;25568?$date+1:25569;
+        $ofs=(70 * 365 + 17+2) * 86400;
+        $date = date(&quot;Y-m-d&quot;,($date * 86400) - $ofs).($time ? &quot; 00:00:00&quot; : &apos;&apos;);
+    }
+    return $date;
+}
+</code></pre><h3 id="&#x4F7F;&#x7528;"><a href="#&#x4F7F;&#x7528;" class="headerlink" title="&#x4F7F;&#x7528;"></a>&#x4F7F;&#x7528;</h3><pre><code>$this-&gt;excelTime(&apos;2015/05/05&apos;);
+//&#x8F93;&#x51FA;&#x7ED3;&#x679C; 2015-05-05
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x7528;phpExcel&amp;#x8BFB;&amp;#x53D6;&amp;#x4E0A;&amp;#x4F20;&amp;#x7684;excel&amp;#x65F6;&amp;#xFF0C;&amp;#x5355;&amp;#x5143;&amp;#x683C;&amp;#x5185;&amp;#x5982;&amp;#x679C;&amp;#x5305;&amp;#x542B;2015/05/05&amp;#x683C;&amp;#x5F0F;&amp;#x7684;&amp;#x65F6;&amp;#x95F4;&amp;#x8BFB;&amp;#x53D6;&amp;#x7684;&amp;#x7ED3;&amp;#x679C;&amp;#x5E76;&amp;#x4E0D;&amp;#x662F;&amp;#x60F3;&amp;#x8C61; 2015/05/05 &amp;#x800C;&amp;#x662F;&amp;#x53D8;&amp;#x6210;&amp;#x4E86; 45646&amp;#x8FD9;&amp;#x79CD;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
   
   <entry>
     <title>php：删除指定路径文件或文件夹</title>
