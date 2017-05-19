@@ -43,15 +43,15 @@
   </entry>
   
   <entry>
-    <title>cakephp 设置与使用全局变量</title>
+    <title>cakephp 设置与使用全局变量，全局方法与私有方法</title>
     <link href="http://yoursite.com/2016/12/24/cakephp%20%E8%AE%BE%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/"/>
     <id>http://yoursite.com/2016/12/24/cakephp 设置与使用全局变量/</id>
     <published>2016-12-24T13:51:30.000Z</published>
-    <updated>2017-05-10T23:50:44.589Z</updated>
+    <updated>2017-05-19T05:28:24.303Z</updated>
     
-    <content type="html"><![CDATA[<p>&#x5728;cakephp&#x4E2D;&#x6709;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5728;&#x6240;&#x6709;&#x7684;&#x7EE7;&#x627F;controller&#x4E2D;&#x516C;&#x7528;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x8FBE;&#x5230;&#x4E00;&#x5904;&#x5B9A;&#x4E49;&#x591A;&#x5904;&#x4F7F;&#x7528;&#x7684;&#x76EE;&#x7684;&#xFF1B;</p>
+    <content type="html"><![CDATA[<p>&#x5728;cakephp&#x4E2D;&#x6709;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5728;&#x6240;&#x6709;&#x7684;&#x7EE7;&#x627F;controller&#x4E2D;&#x516C;&#x7528;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;controller&#x4E2D;&#x7684;&#x6240;&#x6709;action&#x4E2D;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x8FBE;&#x5230;&#x4E00;&#x5904;&#x5B9A;&#x4E49;&#x591A;&#x5904;&#x4F7F;&#x7528;&#x7684;&#x76EE;&#x7684;&#xFF1B;</p>
 <a id="more"></a>
-<h2 id="&#x5728;&#x7236;&#x7EA7;Controller&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;"><a href="#&#x5728;&#x7236;&#x7EA7;Controller&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;" class="headerlink" title="&#x5728;&#x7236;&#x7EA7;Controller&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;"></a>&#x5728;&#x7236;&#x7EA7;Controller&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;</h2><pre><code>class AppController extends Controller {
+<h2 id="1&#xFF1A;&#x5728;&#x7236;&#x7EA7;Controller&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;"><a href="#1&#xFF1A;&#x5728;&#x7236;&#x7EA7;Controller&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;" class="headerlink" title="1&#xFF1A;&#x5728;&#x7236;&#x7EA7;Controller&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;"></a>1&#xFF1A;&#x5728;&#x7236;&#x7EA7;Controller&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;</h2><pre><code>class AppController extends Controller {
 
     public $sessionObj; //&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x53D8;&#x91CF; &#x672C;&#x4F8B;&#x8FD9;&#x91CC;&#x7528;&#x6765;&#x5B58;&#x50A8;session
 
@@ -62,17 +62,46 @@
     }
 
 }
-</code></pre><h2 id="&#x5728;&#x7EE7;&#x627F;&#x7C7B;&#x4E0B;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;"><a href="#&#x5728;&#x7EE7;&#x627F;&#x7C7B;&#x4E0B;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;" class="headerlink" title="&#x5728;&#x7EE7;&#x627F;&#x7C7B;&#x4E0B;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;"></a>&#x5728;&#x7EE7;&#x627F;&#x7C7B;&#x4E0B;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;</h2><pre><code>class BaseController extends AppController {
+</code></pre><h3 id="&#x5728;&#x7EE7;&#x627F;&#x7C7B;&#x4E0B;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;"><a href="#&#x5728;&#x7EE7;&#x627F;&#x7C7B;&#x4E0B;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;" class="headerlink" title="&#x5728;&#x7EE7;&#x627F;&#x7C7B;&#x4E0B;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;"></a>&#x5728;&#x7EE7;&#x627F;&#x7C7B;&#x4E0B;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;</h3><pre><code>class BaseController extends AppController {
     public function index(){
         $this-&gt;sessionObj;
         //&#x901A;&#x8FC7; $this-&gt;sessionObj; &#x62FF;&#x5230;&#x5168;&#x5C40;&#x53D8;&#x91CF;
     }
 }
+</code></pre><h2 id="2&#xFF1A;&#x5728;Controller&#x5185;&#x591A;&#x4E2A;action&#x516C;&#x7528;&#x53D8;&#x91CF;&#x65B9;"><a href="#2&#xFF1A;&#x5728;Controller&#x5185;&#x591A;&#x4E2A;action&#x516C;&#x7528;&#x53D8;&#x91CF;&#x65B9;" class="headerlink" title="2&#xFF1A;&#x5728;Controller&#x5185;&#x591A;&#x4E2A;action&#x516C;&#x7528;&#x53D8;&#x91CF;&#x65B9;"></a>2&#xFF1A;&#x5728;Controller&#x5185;&#x591A;&#x4E2A;action&#x516C;&#x7528;&#x53D8;&#x91CF;&#x65B9;</h2><pre><code>class ReportController extends ReportBaseController{
+    // &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;
+    public $public = &apos;static&apos;;
+
+    // &#x5728;action&#x5185;&#x4F7F;&#x7528;&#x53D8;&#x91CF;$public
+    public function test(){
+            $this-&gt;autoRender = false;
+            echo $this-&gt;$public;  // &#x8F93;&#x51FA; static
+        }
+}
+</code></pre><h2 id="3&#xFF1A;cakephp&#x4E2D;&#x516C;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;"><a href="#3&#xFF1A;cakephp&#x4E2D;&#x516C;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;" class="headerlink" title="3&#xFF1A;cakephp&#x4E2D;&#x516C;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;"></a>3&#xFF1A;cakephp&#x4E2D;&#x516C;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;</h2><pre><code>&#x516C;&#x6709;&#x65B9;&#x6CD5;&#xFF1A;&#x5728;controler&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;action&#x5728;&#x6240;&#x6709;&#x7684;&#x7EE7;&#x627F;&#x7C7B;&#x4E2D;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;
+&#x5728;&#x7236;&#x7EA7;controller&#x4E2D;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;action, &#x53EB;&#x505A;publicAction
+class AppController extends Controller {
+
+    /**
+     * &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;publicAction&#x65B9;&#x6CD5;
+     *
+     * @Author  wester
+     */
+    public function publicAction(){
+
+    }
+}
+
+&#x5728;&#x6240;&#x6709;&#x7EE7;&#x627F;&#x4E86;AppController&#x7684;action&#x5185;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;   $this-&gt;publicAction(); &#x8FDB;&#x884C;&#x8C03;&#x7528;
+</code></pre><h3 id="&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;"><a href="#&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;" class="headerlink" title="&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;"></a>&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;</h3><pre><code>private function publicAction(){
+
+}
+&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4E5F;&#x662F;&#x901A;&#x8FC7; $this-&gt;publicAction(); &#x8FDB;&#x884C;&#x8C03;&#x7528;&#xFF0C;&#x552F;&#x4E00;&#x533A;&#x522B;&#x5C31;&#x662F;&#x4ED6;&#x5FC5;&#x987B;&#x5728;&#x5F53;&#x524D;controller&#x4E2D;&#x4F7F;&#x7528;
 </code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&amp;#x5728;cakephp&amp;#x4E2D;&amp;#x6709;&amp;#x65F6;&amp;#x5019;&amp;#x9700;&amp;#x8981;&amp;#x5728;&amp;#x6240;&amp;#x6709;&amp;#x7684;&amp;#x7EE7;&amp;#x627F;controller&amp;#x4E2D;&amp;#x516C;&amp;#x7528;&amp;#x8FD9;&amp;#x4E2A;&amp;#x53D8;&amp;#x91CF;&amp;#xFF0C;&amp;#x8FBE;&amp;#x5230;&amp;#x4E00;&amp;#x5904;&amp;#x5B9A;&amp;#x4E49;&amp;#x591A;&amp;#x5904;&amp;#x4F7F;&amp;#x7528;&amp;#x7684;&amp;#x76EE;&amp;#x7684;&amp;#xFF1B;&lt;/p&gt;
+      &lt;p&gt;&amp;#x5728;cakephp&amp;#x4E2D;&amp;#x6709;&amp;#x65F6;&amp;#x5019;&amp;#x9700;&amp;#x8981;&amp;#x5728;&amp;#x6240;&amp;#x6709;&amp;#x7684;&amp;#x7EE7;&amp;#x627F;controller&amp;#x4E2D;&amp;#x516C;&amp;#x7528;&amp;#x8FD9;&amp;#x4E2A;&amp;#x53D8;&amp;#x91CF;&amp;#xFF0C;&amp;#x5728;&amp;#x4E00;&amp;#x4E2A;controller&amp;#x4E2D;&amp;#x7684;&amp;#x6240;&amp;#x6709;action&amp;#x4E2D;&amp;#x4F7F;&amp;#x7528;&amp;#x540C;&amp;#x4E00;&amp;#x4E2A;&amp;#x53D8;&amp;#x91CF;&amp;#xFF0C;&amp;#x8FBE;&amp;#x5230;&amp;#x4E00;&amp;#x5904;&amp;#x5B9A;&amp;#x4E49;&amp;#x591A;&amp;#x5904;&amp;#x4F7F;&amp;#x7528;&amp;#x7684;&amp;#x76EE;&amp;#x7684;&amp;#xFF1B;&lt;/p&gt;
     
     </summary>
     
