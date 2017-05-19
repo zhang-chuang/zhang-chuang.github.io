@@ -43,6 +43,47 @@
   </entry>
   
   <entry>
+    <title>cakephp--Session获取不到</title>
+    <link href="http://yoursite.com/2016/12/25/cakephp--Session%E8%8E%B7%E5%8F%96%E4%B8%8D%E5%88%B0,%E4%B8%A2%E5%A4%B1/"/>
+    <id>http://yoursite.com/2016/12/25/cakephp--Session获取不到,丢失/</id>
+    <published>2016-12-25T13:21:30.000Z</published>
+    <updated>2017-05-19T06:28:06.322Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x4F7F;&#x7528;cakephp&#x65F6;&#x78B0;&#x5230;&#x7684;&#x4E00;&#x4E2A;Session&#x95EE;&#x9898;&#xFF0C;&#x5F53;&#x524D;&#x7AEF;&#x9891;&#x53D1;&#x7684;&#x53D1;&#x9001;http&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;Session&#x7ADF;&#x7136;&#x4F1A;&#x4E22;&#x5931;&#xFF0C;&#x5BFC;&#x81F4;&#x9875;&#x9762;&#x8981;&#x9891;&#x7E41;&#x7684;&#x767B;&#x5F55;(&#x8FD9;&#x8FB9;&#x662F;&#x7528;Session&#x6765;&#x505A;&#x7684;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;)</p>
+<a id="more"></a>
+<h3 id="1&#xFF1A;&#x4F7F;&#x7528;&#x573A;&#x666F;"><a href="#1&#xFF1A;&#x4F7F;&#x7528;&#x573A;&#x666F;" class="headerlink" title="1&#xFF1A;&#x4F7F;&#x7528;&#x573A;&#x666F;"></a>1&#xFF1A;&#x4F7F;&#x7528;&#x573A;&#x666F;</h3><pre><code>&#x6BCF;&#x4E00;&#x6B21;http&#x8BF7;&#x6C42;&#x90FD;&#x4F1A;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#xFF0C;&#x9A8C;&#x8BC1;&#x4E0D;&#x901A;&#x8FC7;-&gt;&#x767B;&#x5F55;&#xFF0C;&#x5F53;&#x524D;&#x7AEF;&#x591A;&#x6B21;&#x53D1;&#x9001;ajax&#x8BF7;&#x6C42;&#xFF0C;Session&#x7ADF;&#x7136;&#x6709;&#x65F6;&#x4F1A;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#xFF0C;&#x5237;&#x65B0;&#x540E;&#x53C8;&#x6062;&#x590D;&#x6B63;&#x5E38;
+</code></pre><h3 id="2&#xFF1A;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x53D1;&#x73B0;"><a href="#2&#xFF1A;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x53D1;&#x73B0;" class="headerlink" title="2&#xFF1A;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x53D1;&#x73B0;"></a>2&#xFF1A;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x53D1;&#x73B0;</h3><pre><code>&#x5F53;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528; SSL&#x534F;&#x8BAE;&#x65F6;&#xFF0C;CakePHP &#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E; session.cookie_secure &#x4E3A; true&#x3002;&#x5982; &#x679C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x540C;&#x65F6;&#x4F7F;&#x7528; SSL &#x548C;&#x975E; SSL &#x534F;&#x8BAE;&#xFF0C;&#x4F60;&#x4E5F;&#x8BB8;&#x4F1A;&#x6709;&#x4F1A;&#x8BDD;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#x3002;
+</code></pre><h3 id="3&#xFF1A;&#x89E3;&#x51B3;"><a href="#3&#xFF1A;&#x89E3;&#x51B3;" class="headerlink" title="3&#xFF1A;&#x89E3;&#x51B3;"></a>3&#xFF1A;&#x89E3;&#x51B3;</h3><pre><code>&#x5728;app&gt;Config&gt;core.php&#x4E2D;&#x6DFB;&#x52A0;&#x4EE3;&#x7801;(&#x4E0D;&#x80FD;&#x548C;&#x539F;&#x6709;&#x4EE3;&#x7801;&#x5408;&#x5E76;&#x5199;&#xFF0C;&#x65B0;&#x589E;&#x4E0B;&#x9762;&#x4EE3;&#x7801;)
+Configure::write(&apos;Session&apos;, array(
+&apos;defaults&apos; =&gt; &apos;php&apos;,
+&apos;ini&apos; =&gt; array(
+        &apos;session.cookie_secure&apos; =&gt; false
+    )
+));
+
+
+&#x6216;&#x8005;&#x628A;&#x9ED8;&#x8BA4;&#x7684;Session&#x4E2D; autoRegenerate&#x6CE8;&#x91CA;&#x6389;
+Configure::write(&apos;Session&apos;, array(
+&apos;defaults&apos; =&gt; &apos;php&apos;,
+&apos;timeout&apos;=&gt;1440,          // &#x8FC7;&#x671F;&#x65F6;&#x95F4; 24&#x5C0F;&#x65F6;
+&apos;cookieTimeout&apos;=&gt;1440,    // &#x8FC7;&#x671F;&#x65F6;&#x95F4; 24&#x5C0F;&#x65F6;
+</code></pre><p>//        &#x2018;autoRegenerate&#x2019;=&gt;true // &#x91CD;&#x65B0;&#x751F;&#x6210;&#x4F1A;&#x8BDD;<br>    ));</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x4F7F;&amp;#x7528;cakephp&amp;#x65F6;&amp;#x78B0;&amp;#x5230;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;Session&amp;#x95EE;&amp;#x9898;&amp;#xFF0C;&amp;#x5F53;&amp;#x524D;&amp;#x7AEF;&amp;#x9891;&amp;#x53D1;&amp;#x7684;&amp;#x53D1;&amp;#x9001;http&amp;#x8BF7;&amp;#x6C42;&amp;#x65F6;&amp;#xFF0C;Session&amp;#x7ADF;&amp;#x7136;&amp;#x4F1A;&amp;#x4E22;&amp;#x5931;&amp;#xFF0C;&amp;#x5BFC;&amp;#x81F4;&amp;#x9875;&amp;#x9762;&amp;#x8981;&amp;#x9891;&amp;#x7E41;&amp;#x7684;&amp;#x767B;&amp;#x5F55;(&amp;#x8FD9;&amp;#x8FB9;&amp;#x662F;&amp;#x7528;Session&amp;#x6765;&amp;#x505A;&amp;#x7684;&amp;#x8EAB;&amp;#x4EFD;&amp;#x9A8C;&amp;#x8BC1;)&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="PHP-cakephp" scheme="http://yoursite.com/categories/PHP-cakephp/"/>
+    
+    
+      <category term="PHP-cakephp" scheme="http://yoursite.com/tags/PHP-cakephp/"/>
+    
+  </entry>
+  
+  <entry>
     <title>cakephp 设置与使用全局变量，全局方法与私有方法</title>
     <link href="http://yoursite.com/2016/12/24/cakephp%20%E8%AE%BE%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/"/>
     <id>http://yoursite.com/2016/12/24/cakephp 设置与使用全局变量/</id>
