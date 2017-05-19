@@ -47,7 +47,7 @@
     <link href="http://yoursite.com/2016/12/24/cakephp%20%E8%AE%BE%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/"/>
     <id>http://yoursite.com/2016/12/24/cakephp 设置与使用全局变量/</id>
     <published>2016-12-24T13:51:30.000Z</published>
-    <updated>2017-05-19T05:28:24.303Z</updated>
+    <updated>2017-05-19T05:30:37.897Z</updated>
     
     <content type="html"><![CDATA[<p>&#x5728;cakephp&#x4E2D;&#x6709;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5728;&#x6240;&#x6709;&#x7684;&#x7EE7;&#x627F;controller&#x4E2D;&#x516C;&#x7528;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;controller&#x4E2D;&#x7684;&#x6240;&#x6709;action&#x4E2D;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x8FBE;&#x5230;&#x4E00;&#x5904;&#x5B9A;&#x4E49;&#x591A;&#x5904;&#x4F7F;&#x7528;&#x7684;&#x76EE;&#x7684;&#xFF1B;</p>
 <a id="more"></a>
@@ -93,7 +93,7 @@ class AppController extends Controller {
 }
 
 &#x5728;&#x6240;&#x6709;&#x7EE7;&#x627F;&#x4E86;AppController&#x7684;action&#x5185;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;   $this-&gt;publicAction(); &#x8FDB;&#x884C;&#x8C03;&#x7528;
-</code></pre><h3 id="&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;"><a href="#&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;" class="headerlink" title="&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;"></a>&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;</h3><pre><code>private function publicAction(){
+</code></pre><h3 id="4&#xFF1A;&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;"><a href="#4&#xFF1A;&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;" class="headerlink" title="4&#xFF1A;&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;"></a>4&#xFF1A;&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x58F0;&#x660E;&#x7684;controller&#x4E2D;&#x4F7F;&#x7528;</h3><pre><code>private function publicAction(){
 
 }
 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4E5F;&#x662F;&#x901A;&#x8FC7; $this-&gt;publicAction(); &#x8FDB;&#x884C;&#x8C03;&#x7528;&#xFF0C;&#x552F;&#x4E00;&#x533A;&#x522B;&#x5C31;&#x662F;&#x4ED6;&#x5FC5;&#x987B;&#x5728;&#x5F53;&#x524D;controller&#x4E2D;&#x4F7F;&#x7528;
