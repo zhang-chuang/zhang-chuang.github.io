@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://yoursite.com/2016/12/27/php%EF%BC%9AphpExcel%E8%AF%BB%E5%8F%96%E6%97%B6%E9%97%B4%E4%B8%8D%E6%AD%A3%E7%A1%AE%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2017-05-19T10:48:25.764Z</lastmod>
+    <lastmod>2017-05-19T10:50:36.620Z</lastmod>
     <data>
         <display>
-        <title>用phpExcel读取上传的excel时，单元格内如果包含2015/05/05格式的时间读取的结果并不是想象 2015/05/05 而是变成了 45646</title>
+        <title>php：phpExcel读取时间不正确问题</title>
         <pubTime>2016-12-27T12:11:30.000Z</pubTime>
         
         <tag>PHP</tag>
