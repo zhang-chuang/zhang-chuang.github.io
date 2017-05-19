@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-19T06:28:06.322Z</updated>
+  <updated>2017-05-19T10:35:52.884Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>php：删除指定路径文件或文件夹</title>
+    <link href="http://yoursite.com/2016/12/26/php%EF%BC%9A%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E8%B7%AF%E5%BE%84%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <id>http://yoursite.com/2016/12/26/php：删除指定路径文件或文件夹/</id>
+    <published>2016-12-26T12:51:30.000Z</published>
+    <updated>2017-05-19T10:35:52.884Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x5F00;&#x53D1;&#x65F6;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x5939;&#x5220;&#x9664;</p>
+<a id="more"></a>
+<h2 id="1&#xFF1A;delDirAndFile&#x65B9;&#x6CD5;"><a href="#1&#xFF1A;delDirAndFile&#x65B9;&#x6CD5;" class="headerlink" title="1&#xFF1A;delDirAndFile&#x65B9;&#x6CD5;"></a>1&#xFF1A;delDirAndFile&#x65B9;&#x6CD5;</h2><pre><code>/**
+ * &#x5220;&#x9664;&#x76EE;&#x5F55;&#x53CA;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x6216;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x6587;&#x4EF6;
+ * @param str $path   &#x5F85;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;
+ * @param int $delDir &#x662F;&#x5426;&#x5220;&#x9664;&#x76EE;&#x5F55;&#xFF0C;1&#x6216;true&#x5220;&#x9664;&#x76EE;&#x5F55;&#xFF0C;0&#x6216;false&#x5219;&#x53EA;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x4FDD;&#x7559;&#x76EE;&#x5F55;&#xFF08;&#x5305;&#x542B;&#x5B50;&#x76EE;&#x5F55;&#xFF09;
+ * @return bool &#x8FD4;&#x56DE;&#x5220;&#x9664;&#x72B6;&#x6001;
+ */
+public function delDirAndFile($path, $delDir = FALSE) {
+    $handle = opendir($path);
+    if ($handle) {
+        while (false !== ( $item = readdir($handle) )) {
+            if ($item != &quot;.&quot; &amp;&amp; $item != &quot;..&quot;)
+                is_dir(&quot;$path/$item&quot;) ? $this-&gt;delDirAndFile(&quot;$path/$item&quot;, $delDir) : unlink(&quot;$path/$item&quot;);
+        }
+        closedir($handle);
+        if ($delDir)
+            return rmdir($path);
+    }else {
+        if (file_exists($path)) {
+            return unlink($path);
+        } else {
+            return FALSE;
+        }
+    }
+}
+</code></pre><h3 id="&#x4F7F;&#x7528;"><a href="#&#x4F7F;&#x7528;" class="headerlink" title="&#x4F7F;&#x7528;"></a>&#x4F7F;&#x7528;</h3><pre><code>$deletePath = &apos;upload/uploadZip/time&apos;
+$this-&gt;delDirAndFile($deletePath,true);
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x5F00;&amp;#x53D1;&amp;#x65F6;&amp;#x5E38;&amp;#x7528;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;&amp;#x6587;&amp;#x4EF6;&amp;#xFF0C;&amp;#x6587;&amp;#x4EF6;&amp;#x5939;&amp;#x5220;&amp;#x9664;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
   
   <entry>
     <title>cakephp--Session获取不到</title>
